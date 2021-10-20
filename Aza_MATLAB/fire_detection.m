@@ -3,7 +3,7 @@ close all
 clc
 
 %% Lectura de imagen
-im_rgb = imread("abc010.jpg");
+im_rgb = imread("Database/abc010.jpg");
 figure('Name','Imagen de entrada','NumberTitle','off');
 imshow(im_rgb)
 
