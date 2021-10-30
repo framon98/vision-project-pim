@@ -11,11 +11,11 @@ def R5(image):
 
     im_YCbCr = cv2.cvtColor(im_read, cv2.COLOR_RGB2YCrCb)
     # print(im_YCbCr.shape)
-    im_filtro = np.zeros((fil, col))
+    im_filtro = np.zeros((fil, col), dtype=float)
 
-    # im_Y = np.zeros((fil, col))
-    # im_Cb = np.zeros((fil, col))
-    # im_Cr = np.zeros((fil, col))
+    im_Y = np.zeros((fil, col), dtype=float)
+    im_Cb = np.zeros((fil, col), dtype=float)
+    im_Cr = np.zeros((fil, col), dtype=float)
 
     Ysuma = 0
     Cbsuma = 0
@@ -24,10 +24,6 @@ def R5(image):
 
     
     (im_Y, im_Cb, im_Cr) = cv2.split(im_YCbCr) #, [im_Y, im_Cb, im_Cr]
-
-    # im_Y = im_YCbCr[:][:][0]
-    # im_Cb = im_YCbCr[:][:][1]
-    # im_Cr = im_YCbCr[:][:][2]
 
     # print(im_Y.shape)
     # cv2.imshow("Y channel", im_Y)
@@ -49,9 +45,9 @@ def R5(image):
     Cbprom = (Cbsuma/MxN)
     Crprom = (Crsuma/MxN)
 
-    Yprom = np.uint8(Yprom)
-    Cbprom = np.uint8(Cbprom)
-    Crprom = np.uint8(Crprom)
+    # Yprom = np.uint8(Yprom)
+    # Cbprom = np.uint8(Cbprom)
+    # Crprom = np.uint8(Crprom)
 
     # print(Yprom)
     # print(Cbprom)
@@ -59,7 +55,7 @@ def R5(image):
     #Imagen de salidad filtrada
     for idx in range(0, fil):
         for idy in range(0, col):
-            if im_Y[idx][idy] >= Yprom and im_Cb[idx][idy] >= Cbprom and im_Cr[idx][idy] >= Crprom:
+            if im_Y[idx][idy] >= Yprom and im_Cb[idx][idy] <= Cbprom and im_Cr[idx][idy] >= Crprom:
                 im_filtro[idx][idy] = 1
             else:
                 im_filtro[idx][idy] = 0
