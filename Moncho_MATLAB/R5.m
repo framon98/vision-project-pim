@@ -31,9 +31,9 @@ Yprom  = (Ysuma/MN);
 Cbprom = (Cbsuma/MN);
 Crprom = (Crsuma/MN);
  
-Yprom = uint8(Yprom)
-Cbprom = uint8(Cbprom)
-Crprom = uint8(Crprom)
+Yprom = uint8(Yprom);
+Cbprom = uint8(Cbprom);
+Crprom = uint8(Crprom);
 
 % Salida
 for x = 1:fil

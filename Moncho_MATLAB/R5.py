@@ -53,10 +53,17 @@ def R5(image):
     Cbprom = np.uint8(Cbprom)
     Crprom = np.uint8(Crprom)
 
-    print(Yprom)
-    print(Cbprom)
-    print(Crprom)
+    # print(Yprom)
+    # print(Cbprom)
+    # print(Crprom)
+    #Imagen de salidad filtrada
+    for idx in range(0, fil):
+        for idy in range(0, col):
+            if im_Y[idx][idy] >= Yprom and im_Cb[idx][idy] >= Cbprom and im_Cr[idx][idy] >= Crprom:
+                im_filtro[idx][idy] = 1
+            else:
+                im_filtro[idx][idy] = 0
 
-    # cv2.imshow("Rule 3", im_filtro)
-    # cv2.waitKey(0)
-    # cv2.destroyAllWindows()
+    cv2.imshow("Rule 5", im_filtro)
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
