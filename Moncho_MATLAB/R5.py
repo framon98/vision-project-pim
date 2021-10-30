@@ -9,8 +9,8 @@ def R5(image):
 
     fil, col, ch = im_read.shape
 
-    im_YCbCr = cv2.cvtColor(im_read, cv2.COLOR_BGR2YCrCb)
-    print(im_YCbCr.shape)
+    im_YCbCr = cv2.cvtColor(im_read, cv2.COLOR_RGB2YCrCb)
+    # print(im_YCbCr.shape)
     im_filtro = np.zeros((fil, col))
 
     # im_Y = np.zeros((fil, col))
