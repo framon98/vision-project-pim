@@ -12,16 +12,11 @@ def R2(image):
 
     for idx in range(0, fil):
         for idy in range(0, col):
-            if im_read[idx][idy][0] > 190 and im_read[idx][idy][1] > 100 and im_read[idx][idy][2] < 140:
+            if im_read[idx][idy][0] > 100 and im_read[idx][idy][1] > 50 and im_read[idx][idy][2] < 100:
                 im_filtro[idx][idy] = 1
             else:
                 im_filtro[idx][idy] = 0
-    
-    print(fil)
-    print(col)
-    print(ch)
 
-    
     cv2.imshow("Rule 2", im_filtro)
     cv2.waitKey(0)
     cv2.destroyAllWindows()
