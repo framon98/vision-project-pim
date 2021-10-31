@@ -39,8 +39,8 @@ for x = 1:fil
     end
 end
 
-% figure('Name','Imagen obtenida mediante regla 6','NumberTitle','off');
-% imshow(output_image)
+figure('Name','Imagen obtenida mediante regla 6','NumberTitle','off');
+imshow(output_image)
 output_image = uint8(output_image);
 
 end
