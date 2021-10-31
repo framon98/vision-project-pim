@@ -8,7 +8,7 @@ def R2(image):
 
     fil, col, ch = im_read.shape
 
-    im_filtro = np.zeros((fil, col), dtype=float)
+    im_filtro = np.zeros((fil, col), dtype=np.double)
 
     for idx in range(0, fil):
         for idy in range(0, col):

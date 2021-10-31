@@ -26,9 +26,9 @@ for x = 1:fil
     for y = 1:col
         if imagen_regla_1(x, y) == 1 && imagen_regla_2(x, y) == 1 && imagen_regla_3(x, y) == 1 && imagen_regla_4(x, y) == 1 && imagen_regla_5(x, y) == 1 && imagen_regla_6(x, y) == 1 && imagen_regla_7(x, y) == 1 
             fire_pixels(x, y) = 255;
-            filtered_image(x, y, 1) = 0;
-            filtered_image(x, y, 2) = 255;
-            filtered_image(x, y, 3) = 0;
+            filtered_image(x, y, 1) = 127;
+            filtered_image(x, y, 2) = 0;
+            filtered_image(x, y, 3) = 255;
         end
     end
 end
