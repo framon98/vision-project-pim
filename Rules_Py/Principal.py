@@ -1,11 +1,19 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import cv2
+import serial
+import time
 
 class Rules:
     def __init__(self, image) -> None:
         print("All")
         self.im_read = cv2.imread(image)
+
+    def serialRead(self):
+        ser = serial.Serial('COM7', 9600)
+        res = ser.read()
+        while True:
+            print(res)
 
     def R1(self, im_read):
         """Filtro con Regla 1 para deteccion de fuego"""
