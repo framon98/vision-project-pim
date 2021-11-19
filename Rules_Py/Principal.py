@@ -15,6 +15,36 @@ class Rules:
         while True:
             print(res)
 
+    def thermalFilter(self):
+        # im_read = cv2.imread(image)
+
+        fil, col, ch = self.im_read.shape
+
+        # im_resized = cv2.resize(im_read, [240, 320])
+        im_gray = cv2.cvtColor(self.im_read, cv2.COLOR_BGR2GRAY)
+
+        rid = np.arange(256)
+        mid = 225
+        sid = np.zeros((256, 1))
+
+        for idx in range(0, 256):
+            if rid[idx] >= mid:
+                sid[idx] = 255
+
+        im_filtrada = np.zeros((fil, col), np.uint8)
+
+        for idxi in range(0, fil):
+            for idxj in range(0, col):
+                idxr = im_gray[idxi][idxj]
+                idxk = idxr + 1
+                if idxk == 256:
+                    break
+                im_filtrada[idxi][idxj] = sid[idxk]
+            
+        cv2.imshow("Thermal Image", im_filtrada)
+        cv2.waitKey(0)
+        cv2.destroyAllWindows()
+
     def R1(self, im_read):
         """Filtro con Regla 1 para deteccion de fuego"""
         # im_read = cv2.imread(image)
