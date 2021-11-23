@@ -4,7 +4,7 @@ clc
 
 %% Imagen térmica
 
-im_thermal_leida = imread("Database/T001.jpg");
+im_thermal_leida = imread("Database/T007.jpg");
 % figure('Name','Imagen de entrada','NumberTitle','off');
 % imshow(im_thermal_leida)
 im_thermal = imresize(im_thermal_leida,[240 320]);
@@ -41,7 +41,7 @@ figure('Name','Imagen Threshold Thermal','NumberTitle','off');
 imshow(im_filtrada)
 
 %% Imagen RGB
-im_RGB_leida = imread("Database/RGB001.jpg");
+im_RGB_leida = imread("Database/RGB004.jpg");
 % figure('Name','Imagen de entrada','NumberTitle','off');
 % imshow(im_leida)
 
